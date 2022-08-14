@@ -1,3 +1,4 @@
+import 'package:flower_app/app/data/atom/custom_appbar.dart';
 import 'package:flower_app/app/utils/style.dart';
 import 'package:flutter/material.dart';
 
@@ -9,110 +10,111 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Get.theme.primaryColor,
-        title: Text(
-          'Custom Filter',
-          style: textWhite(size: 18, fontWeight: FontWeight.bold),
-        ),
-        elevation: 1.2,
-        centerTitle: true,
-      ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            margin: const EdgeInsets.all(8),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(5),
-              gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [
-                    Get.theme.primaryColor,
-                    Get.theme.primaryColorLight,
-                    Get.theme.primaryColorDark,
-                  ]),
-            ),
-            height: 35,
-            child: Material(
-              color: Colors.transparent,
-              child: InkWell(
-                borderRadius: BorderRadius.circular(5),
-                onTap: () {
-                  controller.loadFilters();
-                  Get.bottomSheet(
-                      isScrollControlled: true,
-                      Obx(
-                        () => controller.isLoading.isTrue
-                            ? Container(
-                                height: Get.height / 12,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(5),
-                                  gradient: LinearGradient(
-                                      begin: Alignment.topCenter,
-                                      end: Alignment.bottomCenter,
-                                      colors: [
-                                        Get.theme.primaryColor,
-                                        Get.theme.primaryColorLight,
-                                        Get.theme.primaryColorDark,
-                                      ]),
-                                ),
-                                child: Center(
-                                    child: CircularProgressIndicator(
-                                        strokeWidth: 1,
-                                        valueColor:
-                                            AlwaysStoppedAnimation<Color>(
-                                                Colors.white))),
-                              )
-                            : controller.filter.length != 0
-                                ? Filter()
-                                : Error(),
-                      ));
-                },
-                child: Center(
-                  child: Obx(
-                    () => Text(
-                      "${controller.filterName.value} ",
-                      style: textWhite(fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ),
-              ),
-            ),
+      body: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: CustomAppbar(title: "Custom Filter"),
           ),
-          Obx(
-            () => controller.selectedFilter.length > 0
-                ? Container(
-                    height: 30,
-                    width: 30,
-                    decoration: BoxDecoration(
+          SliverToBoxAdapter(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const SizedBox(height: 100),
+                Container(
+                  margin: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [
+                          Get.theme.primaryColor,
+                          Get.theme.primaryColorLight,
+                          Get.theme.primaryColorDark,
+                        ]),
+                  ),
+                  height: 35,
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
                       borderRadius: BorderRadius.circular(5),
-                      gradient: LinearGradient(
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                          colors: [
-                            Get.theme.primaryColor,
-                            Get.theme.primaryColorLight,
-                            Get.theme.primaryColorDark,
-                          ]),
-                    ),
-                    child: Material(
-                      color: Colors.transparent,
-                      child: InkWell(
-                        onTap: () {
-                          controller.selectedFilter.clear();
-                          controller.filterName.value = "Filter";
-                        },
-                        child: Icon(
-                          Icons.cancel,
-                          color: Colors.white,
-                          size: 24,
+                      onTap: () {
+                        controller.loadFilters();
+                        Get.bottomSheet(
+                            isScrollControlled: true,
+                            Obx(
+                              () => controller.isLoading.isTrue
+                                  ? Container(
+                                      height: Get.height / 12,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(5),
+                                        gradient: LinearGradient(
+                                            begin: Alignment.topCenter,
+                                            end: Alignment.bottomCenter,
+                                            colors: [
+                                              Get.theme.primaryColor,
+                                              Get.theme.primaryColorLight,
+                                              Get.theme.primaryColorDark,
+                                            ]),
+                                      ),
+                                      child: Center(
+                                          child: CircularProgressIndicator(
+                                              strokeWidth: 1,
+                                              valueColor:
+                                                  AlwaysStoppedAnimation<Color>(
+                                                      Colors.white))),
+                                    )
+                                  : controller.filter.length != 0
+                                      ? Filter()
+                                      : Error(),
+                            ));
+                      },
+                      child: Center(
+                        child: Obx(
+                          () => Text(
+                            "${controller.filterName.value} ",
+                            style: textWhite(fontWeight: FontWeight.bold),
+                          ),
                         ),
                       ),
                     ),
-                  )
-                : Container(),
+                  ),
+                ),
+                Obx(
+                  () => controller.selectedFilter.length > 0
+                      ? Container(
+                          height: 30,
+                          width: 30,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5),
+                            gradient: LinearGradient(
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter,
+                                colors: [
+                                  Get.theme.primaryColor,
+                                  Get.theme.primaryColorLight,
+                                  Get.theme.primaryColorDark,
+                                ]),
+                          ),
+                          child: Material(
+                            color: Colors.transparent,
+                            child: InkWell(
+                              onTap: () {
+                                controller.selectedFilter.clear();
+                                controller.filterName.value = "Filter";
+                              },
+                              child: Icon(
+                                Icons.cancel,
+                                color: Colors.white,
+                                size: 24,
+                              ),
+                            ),
+                          ),
+                        )
+                      : Container(),
+                ),
+              ],
+            ),
           ),
         ],
       ),
