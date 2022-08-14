@@ -6,7 +6,6 @@ class HomeController extends GetxController {
   final refreshController = RefreshController();
   var selectedFilter = [].obs;
   var isLoading = false.obs;
-  var isFilterOpen = false.obs;
   var filterName = "Filter".obs;
 
   @override
@@ -17,7 +16,7 @@ class HomeController extends GetxController {
   @override
   void onReady() {
     super.onReady();
-    loadFilters();
+    // loadFilters();
   }
 
   @override
@@ -25,7 +24,7 @@ class HomeController extends GetxController {
 
   Future<void> loadFilters() async {
     isLoading(true);
-    await Future.delayed(Duration(milliseconds: 2000), () {
+    await Future.delayed(Duration(seconds: 1), () {
       var temp = <Filter>[
         Filter(id: "newest", filter: "Terbaru"),
         Filter(id: "best-seller", filter: "Terlaris"),
@@ -42,10 +41,6 @@ class HomeController extends GetxController {
     loadFilters();
   }
 
-  void openFilter() {
-    isFilterOpen.value = !isFilterOpen.value;
-  }
-
   void selectFilter(String selected) {
     //check if list of selected filter length more than zero
     if (selectedFilter.length > 0) {
@@ -55,11 +50,12 @@ class HomeController extends GetxController {
       } else {
         selectedFilter.removeAt(0);
         selectedFilter.add(selected);
-        filterName.value = selected;
+        helper(selected);
       }
     } else {
       selectedFilter.add(selected);
-      filterName.value = selected;
+
+      helper(selected);
     }
 
     print(selectedFilter);
@@ -71,6 +67,14 @@ class HomeController extends GetxController {
     } else {
       return false;
     }
+  }
+
+  helper(String selected) {
+    filter.forEach((element) {
+      if (selected == element.id) {
+        filterName.value = element.filter;
+      }
+    });
   }
 }
 
