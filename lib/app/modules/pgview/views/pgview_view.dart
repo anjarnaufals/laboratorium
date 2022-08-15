@@ -1,6 +1,7 @@
 import 'package:flower_app/app/modules/pgview/views/example_home_view.dart';
 import 'package:flower_app/app/modules/pgview/views/example_notif_view.dart';
 import 'package:flower_app/app/modules/pgview/views/example_profile_view.dart';
+import 'package:flower_app/app/utils/style.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -21,19 +22,52 @@ class PgviewView extends GetView<PgviewController> {
           ],
         ),
       ),
-      bottomNavigationBar: Obx(() => BottomNavigationBar(
-          onTap: (i) {
-            controller.changeMenu(i);
-          },
-          showSelectedLabels: false,
-          showUnselectedLabels: false,
-          currentIndex: controller.index.value,
-          selectedIconTheme: IconThemeData(color: Get.theme.primaryColorLight),
-          items: controller.menus
-              .map(
-                  (e) => BottomNavigationBarItem(icon: Icon(e.menu), label: ""))
-              .toList())),
+      bottomNavigationBar: SafeArea(
+          child: Container(
+              height: kToolbarHeight,
+              child: Row(
+                children:
+                    controller.menus.map((e) => _CustomMenuItem(e)).toList(),
+              ))),
       floatingActionButton: _BackButton(),
+    );
+  }
+}
+
+class _CustomMenuItem extends GetWidget<PgviewController> {
+  final Menu e;
+  const _CustomMenuItem(
+    this.e, {
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        controller.changeMenu(e.id);
+      },
+      child: Container(
+          color: Colors.transparent,
+          width: Get.width / 3,
+          height: kToolbarHeight,
+          child: Stack(alignment: Alignment.center, children: [
+            Icon(e.menu),
+            Positioned(
+                top: Get.width / 81,
+                left: Get.width / 6,
+                child: Container(
+                    constraints: BoxConstraints(minHeight: 20, minWidth: 20),
+                    decoration: BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.circular(20)),
+                    padding: const EdgeInsets.only(top: 3, right: 3, left: 3),
+                    child: Text(
+                      "99",
+                      style: textWhite(size: 10),
+                      textAlign: TextAlign.center,
+                    )))
+          ])),
     );
   }
 }
