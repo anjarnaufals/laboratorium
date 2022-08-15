@@ -7,6 +7,7 @@ class AllController extends GetxController {
     Menu(menu: "Stack", route: Routes.MAIN),
     Menu(menu: "TextField", route: Routes.TEXTFIELD),
     Menu(menu: "Date Picker", route: Routes.DATE_PICKER),
+    Menu(menu: "Menu with pageview", route: Routes.PGVIEW),
   ];
 
   @override

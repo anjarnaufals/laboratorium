@@ -8,6 +8,8 @@ import 'package:flower_app/app/modules/home/bindings/home_binding.dart';
 import 'package:flower_app/app/modules/home/views/home_view.dart';
 import 'package:flower_app/app/modules/main/bindings/main_binding.dart';
 import 'package:flower_app/app/modules/main/views/main_view.dart';
+import 'package:flower_app/app/modules/pgview/bindings/pgview_binding.dart';
+import 'package:flower_app/app/modules/pgview/views/pgview_view.dart';
 import 'package:flower_app/app/modules/textfield/bindings/textfield_binding.dart';
 import 'package:flower_app/app/modules/textfield/views/textfield_view.dart';
 
@@ -47,6 +49,12 @@ class AppPages {
       page: () => DatePickerView(),
       binding: DatePickerBinding(),
       transition: Transition.cupertino,
+    ),
+    GetPage(
+      name: _Paths.PGVIEW,
+      page: () => PgviewView(),
+      binding: PgviewBinding(),
+      transition: Transition.leftToRight,
     ),
   ];
 }

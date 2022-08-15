@@ -4,7 +4,12 @@ import 'package:get/get.dart';
 
 class CustomAppbar extends StatelessWidget {
   final String title;
-  const CustomAppbar({Key? key, required this.title}) : super(key: key);
+  final bool? backButton;
+  const CustomAppbar({
+    Key? key,
+    required this.title,
+    this.backButton,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +33,7 @@ class CustomAppbar extends StatelessWidget {
               child: InkWell(
                 borderRadius: BorderRadius.circular(25),
                 onTap: () {
-                  Get.back();
+                  backButton == true ? Get.back() : null;
                 },
                 child: Container(
                   decoration: BoxDecoration(
@@ -36,11 +41,13 @@ class CustomAppbar extends StatelessWidget {
                     borderRadius: BorderRadius.circular(25),
                   ),
                   padding: const EdgeInsets.all(16),
-                  child: Icon(
-                    Icons.adaptive.arrow_back,
-                    color: Colors.white,
-                    size: 24,
-                  ),
+                  child: backButton == true
+                      ? Icon(
+                          Icons.adaptive.arrow_back,
+                          color: Colors.white,
+                          size: 24,
+                        )
+                      : SizedBox(width: 24),
                 ),
               ),
             ),

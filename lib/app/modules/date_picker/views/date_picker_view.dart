@@ -54,7 +54,10 @@ class _AppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
-      child: CustomAppbar(title: "Date Picker"),
+      child: CustomAppbar(
+        title: "Date Picker",
+        backButton: true,
+      ),
     );
   }
 }

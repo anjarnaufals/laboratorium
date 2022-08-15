@@ -13,7 +13,10 @@ class HomeView extends GetView<HomeController> {
       body: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
-            child: CustomAppbar(title: "Custom Filter"),
+            child: CustomAppbar(
+              title: "Custom Filter",
+              backButton: true,
+            ),
           ),
           SliverToBoxAdapter(
             child: Column(

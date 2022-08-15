@@ -9,6 +9,7 @@ abstract class Routes {
   static const ALL = _Paths.ALL;
   static const TEXTFIELD = _Paths.TEXTFIELD;
   static const DATE_PICKER = _Paths.DATE_PICKER;
+  static const PGVIEW = _Paths.PGVIEW;
 }
 
 abstract class _Paths {
@@ -17,4 +18,5 @@ abstract class _Paths {
   static const ALL = '/all';
   static const TEXTFIELD = '/textfield';
   static const DATE_PICKER = '/date-picker';
+  static const PGVIEW = '/pgview';
 }
