@@ -11,6 +11,9 @@ class ExProfileView extends StatelessWidget {
         slivers: [
           SliverToBoxAdapter(
             child: CustomAppbar(title: "ExProfileView"),
+          ),
+          SliverFillRemaining(
+            child: Center(child: Text("Example Profile View")),
           )
         ],
       ),

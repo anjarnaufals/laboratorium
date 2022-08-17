@@ -11,6 +11,9 @@ class ExNotifView extends StatelessWidget {
         slivers: [
           SliverToBoxAdapter(
             child: CustomAppbar(title: "ExNotifView"),
+          ),
+          SliverFillRemaining(
+            child: Center(child: Text("Example Notif View")),
           )
         ],
       ),

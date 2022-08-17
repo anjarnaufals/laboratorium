@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 
 import 'package:flower_app/app/modules/all/bindings/all_binding.dart';
 import 'package:flower_app/app/modules/all/views/all_view.dart';
+import 'package:flower_app/app/modules/custombutton/bindings/custombutton_binding.dart';
+import 'package:flower_app/app/modules/custombutton/views/custombutton_view.dart';
 import 'package:flower_app/app/modules/date_picker/bindings/date_picker_binding.dart';
 import 'package:flower_app/app/modules/date_picker/views/date_picker_view.dart';
 import 'package:flower_app/app/modules/home/bindings/home_binding.dart';
@@ -55,6 +57,12 @@ class AppPages {
       page: () => PgviewView(),
       binding: PgviewBinding(),
       transition: Transition.leftToRight,
+    ),
+    GetPage(
+      name: _Paths.CUSTOMBUTTON,
+      page: () => CustombuttonView(),
+      binding: CustombuttonBinding(),
+      transition: Transition.size,
     ),
   ];
 }

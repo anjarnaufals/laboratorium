@@ -8,6 +8,7 @@ class AllController extends GetxController {
     Menu(menu: "TextField", route: Routes.TEXTFIELD),
     Menu(menu: "Date Picker", route: Routes.DATE_PICKER),
     Menu(menu: "Menu with pageview", route: Routes.PGVIEW),
+    Menu(menu: "Custom Button", route: Routes.CUSTOMBUTTON),
   ];
 
   @override
