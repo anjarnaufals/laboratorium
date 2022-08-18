@@ -1,4 +1,4 @@
-# flower_app
+# laboratorium
 
 A new Flutter project about customization widget
 
