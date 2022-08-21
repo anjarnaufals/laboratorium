@@ -6,12 +6,16 @@ import 'package:flower_app/app/modules/custombutton/bindings/custombutton_bindin
 import 'package:flower_app/app/modules/custombutton/views/custombutton_view.dart';
 import 'package:flower_app/app/modules/date_picker/bindings/date_picker_binding.dart';
 import 'package:flower_app/app/modules/date_picker/views/date_picker_view.dart';
+import 'package:flower_app/app/modules/example/bindings/example_binding.dart';
+import 'package:flower_app/app/modules/example/views/example_view.dart';
 import 'package:flower_app/app/modules/home/bindings/home_binding.dart';
 import 'package:flower_app/app/modules/home/views/home_view.dart';
 import 'package:flower_app/app/modules/main/bindings/main_binding.dart';
 import 'package:flower_app/app/modules/main/views/main_view.dart';
 import 'package:flower_app/app/modules/pgview/bindings/pgview_binding.dart';
 import 'package:flower_app/app/modules/pgview/views/pgview_view.dart';
+import 'package:flower_app/app/modules/slider/bindings/slider_binding.dart';
+import 'package:flower_app/app/modules/slider/views/slider_view.dart';
 import 'package:flower_app/app/modules/textfield/bindings/textfield_binding.dart';
 import 'package:flower_app/app/modules/textfield/views/textfield_view.dart';
 
@@ -63,6 +67,17 @@ class AppPages {
       page: () => CustombuttonView(),
       binding: CustombuttonBinding(),
       transition: Transition.size,
+    ),
+    GetPage(
+      name: _Paths.EXAMPLE,
+      page: () => ExampleView(),
+      binding: ExampleBinding(),
+    ),
+    GetPage(
+      name: _Paths.SLIDER,
+      page: () => SliderView(),
+      binding: SliderBinding(),
+      transition: Transition.values[10],
     ),
   ];
 }

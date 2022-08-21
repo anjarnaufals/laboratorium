@@ -11,6 +11,8 @@ abstract class Routes {
   static const DATE_PICKER = _Paths.DATE_PICKER;
   static const PGVIEW = _Paths.PGVIEW;
   static const CUSTOMBUTTON = _Paths.CUSTOMBUTTON;
+  static const EXAMPLE = _Paths.EXAMPLE;
+  static const SLIDER = _Paths.SLIDER;
 }
 
 abstract class _Paths {
@@ -21,4 +23,6 @@ abstract class _Paths {
   static const DATE_PICKER = '/date-picker';
   static const PGVIEW = '/pgview';
   static const CUSTOMBUTTON = '/custombutton';
+  static const EXAMPLE = '/example';
+  static const SLIDER = '/slider';
 }
