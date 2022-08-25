@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 
 import 'package:flower_app/app/modules/all/bindings/all_binding.dart';
 import 'package:flower_app/app/modules/all/views/all_view.dart';
+import 'package:flower_app/app/modules/bubble/bindings/bubble_binding.dart';
+import 'package:flower_app/app/modules/bubble/views/bubble_view.dart';
 import 'package:flower_app/app/modules/custombutton/bindings/custombutton_binding.dart';
 import 'package:flower_app/app/modules/custombutton/views/custombutton_view.dart';
 import 'package:flower_app/app/modules/date_picker/bindings/date_picker_binding.dart';
@@ -78,6 +80,11 @@ class AppPages {
       page: () => SliderView(),
       binding: SliderBinding(),
       transition: Transition.values[10],
+    ),
+    GetPage(
+      name: _Paths.BUBBLE,
+      page: () => BubbleView(),
+      binding: BubbleBinding(),
     ),
   ];
 }

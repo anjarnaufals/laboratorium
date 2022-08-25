@@ -13,6 +13,7 @@ abstract class Routes {
   static const CUSTOMBUTTON = _Paths.CUSTOMBUTTON;
   static const EXAMPLE = _Paths.EXAMPLE;
   static const SLIDER = _Paths.SLIDER;
+  static const BUBBLE = _Paths.BUBBLE;
 }
 
 abstract class _Paths {
@@ -25,4 +26,5 @@ abstract class _Paths {
   static const CUSTOMBUTTON = '/custombutton';
   static const EXAMPLE = '/example';
   static const SLIDER = '/slider';
+  static const BUBBLE = '/bubble';
 }

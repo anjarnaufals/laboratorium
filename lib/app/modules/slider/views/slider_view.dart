@@ -1,6 +1,7 @@
 import 'package:flower_app/app/data/atom/custom_appbar.dart';
 import 'package:flower_app/app/modules/custombutton/views/custombutton_view.dart';
 import 'package:flower_app/app/utils/style.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -13,7 +14,7 @@ class SliderView extends GetView<SliderController> {
     return Scaffold(
       appBar: PreferredSize(
           preferredSize: Size(0, kToolbarHeight),
-          child: CustomAppbar(title: "Slider", backButton: true)),
+          child: CustomAppbar(title: "Simple Slider", backButton: true)),
       body: Container(
         padding: const EdgeInsets.all(16),
         width: Get.width,
@@ -28,20 +29,28 @@ class SliderView extends GetView<SliderController> {
                   "Slider",
                   style: textWhite(size: 16),
                 )),
-            Obx(() => Slider(
-                  mouseCursor: MouseCursor.uncontrolled,
-                  value: controller.number.value,
-                  min: 0,
-                  max: 100,
-                  onChanged: (Value) {
-                    controller.number.value = Value;
-                  },
-                  onChangeEnd: (RangeValues) {},
-                  onChangeStart: (RangeValues) {},
-                  semanticFormatterCallback: (RangeValues) {
-                    return "active";
-                  },
-                )),
+            Obx(() => GetPlatform.isAndroid
+                ? Slider(
+                    mouseCursor: MouseCursor.uncontrolled,
+                    value: controller.number.value,
+                    min: 0,
+                    max: 100,
+                    onChanged: (Value) {
+                      controller.number.value = Value;
+                    },
+                    onChangeEnd: (RangeValues) {},
+                    onChangeStart: (RangeValues) {},
+                  )
+                : CupertinoSlider(
+                    value: controller.number.value,
+                    min: 0,
+                    max: 100,
+                    onChanged: (Value) {
+                      controller.number.value = Value;
+                    },
+                    onChangeEnd: (RangeValues) {},
+                    onChangeStart: (RangeValues) {},
+                  )),
             Obx(() => Text("Value => ${controller.number.value}")),
             const SizedBox(height: 20),
             Divider(thickness: 1),
@@ -55,6 +64,7 @@ class SliderView extends GetView<SliderController> {
                   style: textWhite(size: 16),
                 )),
             Obx(() => RangeSlider(
+                  divisions: 5,
                   min: 0,
                   max: 100,
                   values:

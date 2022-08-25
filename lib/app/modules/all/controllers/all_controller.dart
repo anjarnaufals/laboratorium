@@ -9,7 +9,8 @@ class AllController extends GetxController {
     Menu(menu: "Date Picker", route: Routes.DATE_PICKER),
     Menu(menu: "Menu with pageview", route: Routes.PGVIEW),
     Menu(menu: "Custom Button", route: Routes.CUSTOMBUTTON),
-    Menu(menu: "Slider", route: Routes.SLIDER),
+    Menu(menu: "Simple Slider", route: Routes.SLIDER),
+    Menu(menu: "Bubble", route: Routes.BUBBLE),
     Menu(menu: "Example", route: Routes.EXAMPLE),
   ];
 
