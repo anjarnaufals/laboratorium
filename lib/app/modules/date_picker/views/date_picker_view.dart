@@ -1,14 +1,16 @@
 import 'package:flower_app/app/data/atom/custom_appbar.dart';
 import 'package:flower_app/app/data/atom/gradient_text.dart';
+import 'package:flower_app/app/utils/style.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 import '../controllers/date_picker_controller.dart';
 
 class DatePickerView extends GetView<DatePickerController> {
-  //TODO : Date Picker Widget onprogress
+  //TODO : on progress
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,14 +33,68 @@ class DatePickerView extends GetView<DatePickerController> {
           ),
           SliverToBoxAdapter(
             child: Container(
-              decoration: BoxDecoration(
-                gradient: linearGradient,
-              ),
-              child: Container(
-                height: Get.width,
-                color: Colors.black26,
-                width: Get.width,
-              ),
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  gradient: linearGradient,
+                ),
+                child: Stack(
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        print("On Tap");
+                      },
+                      onVerticalDragEnd: (details) {
+                        if (details.primaryVelocity! > 0) {
+                          print("Swipe Up");
+                        } else if (details.primaryVelocity! < 0) {
+                          print("Swipe Bottom");
+                        }
+                      },
+                      child: Container(
+                          height: 60,
+                          width: 50,
+                          color: Colors.white,
+                          child: ScrollablePositionedList.builder(
+                            padding: const EdgeInsets.only(
+                              left: 16,
+                              top: 20,
+                            ),
+                            itemScrollController: controller.scrollController,
+                            itemPositionsListener:
+                                ItemPositionsListener.create(),
+                            itemCount: 30,
+                            itemBuilder: (_, i) {
+                              return Text(
+                                "${i}",
+                                style: TextStyle(
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              );
+                            },
+                          )),
+                    )
+                  ],
+                )),
+          ),
+          SliverToBoxAdapter(
+            child: Container(
+              height: Get.width / 4,
+              child: Obx(() => Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      GradientText("${controller.days.value}",
+                          gradient: linearGradient, style: textWhite(size: 40)),
+                      const SizedBox(
+                          width: 20, child: Center(child: Text(":"))),
+                      GradientText("${controller.months.value}",
+                          gradient: linearGradient, style: textWhite(size: 40)),
+                      const SizedBox(
+                          width: 20, child: Center(child: Text(":"))),
+                      GradientText("${controller.years.value}",
+                          gradient: linearGradient, style: textWhite(size: 40)),
+                    ],
+                  )),
             ),
           )
         ],
