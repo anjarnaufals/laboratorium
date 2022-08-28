@@ -5,10 +5,12 @@ import 'package:get/get.dart';
 class CustomAppbar extends StatelessWidget {
   final String title;
   final bool? backButton;
+  final bool? isSliver;
   const CustomAppbar({
     Key? key,
     required this.title,
     this.backButton,
+    this.isSliver,
   }) : super(key: key);
 
   @override

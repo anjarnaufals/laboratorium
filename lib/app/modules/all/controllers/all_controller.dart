@@ -11,6 +11,7 @@ class AllController extends GetxController {
     Menu(menu: "Custom Button", route: Routes.CUSTOMBUTTON),
     Menu(menu: "Simple Slider", route: Routes.SLIDER),
     Menu(menu: "Bubble", route: Routes.BUBBLE),
+    Menu(menu: "Cart", route: Routes.CART),
     Menu(menu: "Example", route: Routes.EXAMPLE),
   ];
 

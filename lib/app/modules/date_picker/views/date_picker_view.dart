@@ -10,7 +10,7 @@ import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import '../controllers/date_picker_controller.dart';
 
 class DatePickerView extends GetView<DatePickerController> {
-  //TODO : on progress
+  //TODO : datepicker on progress
   @override
   Widget build(BuildContext context) {
     return Scaffold(

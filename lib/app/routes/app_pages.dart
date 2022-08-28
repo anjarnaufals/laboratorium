@@ -4,6 +4,8 @@ import 'package:flower_app/app/modules/all/bindings/all_binding.dart';
 import 'package:flower_app/app/modules/all/views/all_view.dart';
 import 'package:flower_app/app/modules/bubble/bindings/bubble_binding.dart';
 import 'package:flower_app/app/modules/bubble/views/bubble_view.dart';
+import 'package:flower_app/app/modules/cart/bindings/cart_binding.dart';
+import 'package:flower_app/app/modules/cart/views/cart_view.dart';
 import 'package:flower_app/app/modules/custombutton/bindings/custombutton_binding.dart';
 import 'package:flower_app/app/modules/custombutton/views/custombutton_view.dart';
 import 'package:flower_app/app/modules/date_picker/bindings/date_picker_binding.dart';
@@ -85,6 +87,13 @@ class AppPages {
       name: _Paths.BUBBLE,
       page: () => BubbleView(),
       binding: BubbleBinding(),
+      transition: Transition.rightToLeft,
+    ),
+    GetPage(
+      name: _Paths.CART,
+      page: () => CartView(),
+      binding: CartBinding(),
+      transition: Transition.rightToLeft,
     ),
   ];
 }

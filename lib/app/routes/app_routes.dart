@@ -14,6 +14,7 @@ abstract class Routes {
   static const EXAMPLE = _Paths.EXAMPLE;
   static const SLIDER = _Paths.SLIDER;
   static const BUBBLE = _Paths.BUBBLE;
+  static const CART = _Paths.CART;
 }
 
 abstract class _Paths {
@@ -27,4 +28,5 @@ abstract class _Paths {
   static const EXAMPLE = '/example';
   static const SLIDER = '/slider';
   static const BUBBLE = '/bubble';
+  static const CART = '/cart';
 }
