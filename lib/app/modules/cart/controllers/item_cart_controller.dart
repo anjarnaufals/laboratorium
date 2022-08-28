@@ -11,7 +11,7 @@ class ItemCartController extends GetxController {
   }
 
   void remove(String id, int pos) {
-    if (qty == 0) {
+    if (qty == 1) {
       Get.find<CartController>().removeItem(id);
     } else {
       var priceselect = Get.find<CartController>().cartItem[pos].price;

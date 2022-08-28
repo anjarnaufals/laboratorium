@@ -1,12 +1,15 @@
+import 'dart:math';
+
 import 'package:flower_app/app/data/model/product_model.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 
 class CartController extends GetxController {
-  var onSuccess, onEmpty, onError, onLoading = false.obs;
   final cartItem = <Product>[].obs;
+  var onSuccess, onEmpty, onError, onLoading = false.obs;
   var total = 0.obs;
 
+  @override
   void onInit() {
     super.onInit();
   }
@@ -34,12 +37,12 @@ class CartController extends GetxController {
   createData() {
     var i;
 
-    for (i = 0; i < 10; i++) {
+    for (i = 1; i < 10; i++) {
       var item = Product(
-        id: "Id-Item-${i}",
-        name: "Name-Item-${i}",
+        id: "Id-Item-$i",
+        name: "Name-Item-$i",
         qty: i,
-        price: (i + 1000) + i,
+        price: (i + Random().nextInt(10000) + 5000) + i,
       );
       cartItem.add(item);
     }
@@ -59,8 +62,8 @@ class CartController extends GetxController {
 
   setTotal() {
     total.value = 0;
-    cartItem.forEach((item) {
+    for (var item in cartItem) {
       total.value += (item.price! * item.qty!);
-    });
+    }
   }
 }

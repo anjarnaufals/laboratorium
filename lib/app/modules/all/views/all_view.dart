@@ -57,7 +57,7 @@ class _Item extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                   child: Text(
-                    "${e.menu}",
+                    e.menu,
                     style: textWhite(size: 14, fontWeight: FontWeight.bold),
                   ),
                 ),

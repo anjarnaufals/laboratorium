@@ -199,7 +199,7 @@ class Filter extends GetWidget<HomeController> {
                       children: [
                         const SizedBox(width: 16),
                         Text(
-                          "${filter}",
+                          filter,
                           style: textWhite(),
                         ),
                         Spacer(),

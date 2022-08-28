@@ -70,11 +70,11 @@ class HomeController extends GetxController {
   }
 
   helper(String selected) {
-    filter.forEach((element) {
+    for (var element in filter) {
       if (selected == element.id) {
         filterName.value = element.filter;
       }
-    });
+    }
   }
 }
 
@@ -84,9 +84,9 @@ class Filter {
   Filter({required this.id, required this.filter});
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data["id"] = this.id;
-    data["filter"] = this.filter;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data["id"] = id;
+    data["filter"] = filter;
     return data;
   }
 }

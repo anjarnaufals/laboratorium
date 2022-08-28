@@ -8,9 +8,9 @@ class PageArgs {
   });
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data["from"] = this.from;
-    data["args"] = this.args;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data["from"] = from;
+    data["args"] = args;
     return data;
   }
 }
@@ -25,9 +25,9 @@ class Args {
   });
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data["page"] = this.page;
-    data["length"] = this.length;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data["page"] = page;
+    data["length"] = length;
     return data;
   }
 }

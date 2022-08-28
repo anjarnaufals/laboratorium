@@ -236,6 +236,7 @@ class _AppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
+      elevation: 0.2,
       pinned: true,
       flexibleSpace: CustomAppbar(
         title: "Cart",

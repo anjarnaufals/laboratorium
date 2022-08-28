@@ -65,7 +65,7 @@ class DatePickerView extends GetView<DatePickerController> {
                             itemCount: 30,
                             itemBuilder: (_, i) {
                               return Text(
-                                "${i}",
+                                "$i",
                                 style: TextStyle(
                                   fontSize: 30,
                                   fontWeight: FontWeight.w500,

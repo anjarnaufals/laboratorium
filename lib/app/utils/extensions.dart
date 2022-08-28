@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 extension StringExtenseion on String {
   String toCapitalize() {
-    return this.isEmpty
+    return isEmpty
         ? ""
-        : "${this[0].toUpperCase()}${this.substring(1).toLowerCase()}";
+        : "${this[0].toUpperCase()}${substring(1).toLowerCase()}";
   }
 }
 

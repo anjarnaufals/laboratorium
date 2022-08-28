@@ -29,7 +29,7 @@ class BubbleController extends GetxController {
       x.value = position.dx;
       print("ini x => ${x + coordinatText.length.toDouble() * 3}");
       y.value = position.dy;
-      print("ini y => ${y}");
+      print("ini y => $y");
     }
   }
 }

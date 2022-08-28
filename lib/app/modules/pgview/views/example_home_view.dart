@@ -69,7 +69,7 @@ class _ContentTabBarView extends StatelessWidget {
       color: i == 1
           ? Color.fromARGB(255, 202, 143, 139)
           : Color.fromARGB(255, 139, 202, 164),
-      child: Center(child: Text("TabBarView ${i} ")),
+      child: Center(child: Text("TabBarView $i ")),
     );
   }
 }

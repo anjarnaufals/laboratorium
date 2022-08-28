@@ -25,7 +25,7 @@ class BubbleView extends GetView<BubbleController> {
                   controller.getKordinat(controller.keyTest);
                 },
                 child: Text(
-                  "${controller.coordinatText}",
+                  controller.coordinatText,
                   style: TextStyle(color: Colors.red),
                   key: controller.keyTest,
                 ),
