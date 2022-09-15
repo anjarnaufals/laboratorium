@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 // Project imports:
 import 'package:flower_app/app/utils/style.dart';
 
-class CustomAppbar extends StatelessWidget {
+class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final bool? backButton;
   final bool? isSliver;
@@ -67,4 +67,7 @@ class CustomAppbar extends StatelessWidget {
       ),
     );
   }
+
+  @override
+  Size get preferredSize => Size(0, kToolbarHeight);
 }

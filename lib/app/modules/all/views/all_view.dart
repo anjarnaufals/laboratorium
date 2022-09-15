@@ -1,4 +1,5 @@
 // Flutter imports:
+import 'package:flower_app/app/data/atom/custom_header_refresh.dart';
 import 'package:flutter/material.dart';
 
 // Package imports:
@@ -13,11 +14,11 @@ import 'package:flower_app/app/utils/style.dart';
 class AllView extends GetView<AllController> {
   @override
   Widget build(BuildContext context) {
-    var c = controller;
-    var menu = c.listMenu;
+    final c = controller;
+    final menu = c.listMenu;
     return Scaffold(
       body: SmartRefresher(
-        header: ClassicHeader(),
+        header: CustomHeaderRefresh(),
         onRefresh: c.onRefresh,
         controller: c.refreshController,
         child: SingleChildScrollView(
