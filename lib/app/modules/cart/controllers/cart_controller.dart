@@ -1,8 +1,12 @@
+// Dart imports:
 import 'dart:math';
 
-import 'package:flower_app/app/data/model/product_model.dart';
+// Package imports:
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
+
+// Project imports:
+import 'package:flower_app/app/data/model/product_model.dart';
 
 class CartController extends GetxController {
   final cartItem = <Product>[].obs;

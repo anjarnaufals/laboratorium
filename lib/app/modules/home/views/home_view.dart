@@ -1,9 +1,12 @@
-import 'package:flower_app/app/data/atom/custom_appbar.dart';
-import 'package:flower_app/app/utils/style.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
 
+// Package imports:
 import 'package:get/get.dart';
 
+// Project imports:
+import 'package:flower_app/app/data/atom/custom_appbar.dart';
+import 'package:flower_app/app/utils/style.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {

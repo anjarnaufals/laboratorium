@@ -15,6 +15,7 @@ abstract class Routes {
   static const SLIDER = _Paths.SLIDER;
   static const BUBBLE = _Paths.BUBBLE;
   static const CART = _Paths.CART;
+  static const AUTO_REFRESH = _Paths.AUTO_REFRESH;
 }
 
 abstract class _Paths {
@@ -29,4 +30,5 @@ abstract class _Paths {
   static const SLIDER = '/slider';
   static const BUBBLE = '/bubble';
   static const CART = '/cart';
+  static const AUTO_REFRESH = '/auto-refresh';
 }

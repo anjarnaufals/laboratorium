@@ -1,12 +1,15 @@
-import 'package:flower_app/app/data/atom/custom_appbar.dart';
-import 'package:flower_app/app/data/atom/gradient_text.dart';
-import 'package:flower_app/app/utils/style.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
 
+// Package imports:
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
+// Project imports:
+import 'package:flower_app/app/data/atom/custom_appbar.dart';
+import 'package:flower_app/app/data/atom/gradient_text.dart';
+import 'package:flower_app/app/utils/style.dart';
 import '../controllers/date_picker_controller.dart';
 
 class DatePickerView extends GetView<DatePickerController> {

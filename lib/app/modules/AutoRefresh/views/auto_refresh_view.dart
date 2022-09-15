@@ -5,19 +5,20 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // Project imports:
-import '../controllers/example_controller.dart';
+import '../controllers/auto_refresh_controller.dart';
 
-class ExampleView extends GetView<ExampleController> {
+class AutoRefreshView extends GetView<AutoRefreshController> {
+//TODO : implement auto refresh while Get.back() , on development
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('ExampleView'),
+        title: Text('AutoRefreshView'),
         centerTitle: true,
       ),
       body: Center(
         child: Text(
-          'ExampleButton',
+          'AutoRefreshView is working',
           style: TextStyle(fontSize: 20),
         ),
       ),

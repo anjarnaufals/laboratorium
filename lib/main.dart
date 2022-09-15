@@ -1,9 +1,12 @@
-import 'package:flower_app/app/utils/theme_data.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
 
+// Package imports:
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 
+// Project imports:
+import 'package:flower_app/app/utils/theme_data.dart';
 import 'app/routes/app_pages.dart';
 
 void main() {

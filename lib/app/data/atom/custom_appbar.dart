@@ -1,6 +1,11 @@
-import 'package:flower_app/app/utils/style.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:get/get.dart';
+
+// Project imports:
+import 'package:flower_app/app/utils/style.dart';
 
 class CustomAppbar extends StatelessWidget {
   final String title;

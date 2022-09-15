@@ -1,9 +1,12 @@
-import 'package:flower_app/app/data/atom/custom_appbar.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
 
+// Package imports:
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+// Project imports:
+import 'package:flower_app/app/data/atom/custom_appbar.dart';
 import '../controllers/custombutton_controller.dart';
 
 class CustombuttonView extends GetView<CustombuttonController> {

@@ -1,11 +1,14 @@
+// Flutter imports:
+import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:get/get.dart';
+
+// Project imports:
 import 'package:flower_app/app/modules/pgview/views/example_home_view.dart';
 import 'package:flower_app/app/modules/pgview/views/example_notif_view.dart';
 import 'package:flower_app/app/modules/pgview/views/example_profile_view.dart';
 import 'package:flower_app/app/utils/style.dart';
-import 'package:flutter/material.dart';
-
-import 'package:get/get.dart';
-
 import '../controllers/pgview_controller.dart';
 
 class PgviewView extends GetView<PgviewController> {

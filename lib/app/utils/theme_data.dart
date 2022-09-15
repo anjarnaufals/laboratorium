@@ -1,5 +1,8 @@
-import 'package:flower_app/app/utils/extensions.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Project imports:
+import 'package:flower_app/app/utils/extensions.dart';
 
 abstract class CustomTheme {
   CustomTheme._();

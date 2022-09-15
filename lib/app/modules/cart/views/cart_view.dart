@@ -1,13 +1,17 @@
+// Dart imports:
 import 'dart:math';
 
+// Flutter imports:
+import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:get/get.dart';
+
+// Project imports:
 import 'package:flower_app/app/data/atom/custom_appbar.dart';
 import 'package:flower_app/app/data/model/product_model.dart';
 import 'package:flower_app/app/modules/cart/controllers/item_cart_controller.dart';
 import 'package:flower_app/app/modules/custombutton/views/custombutton_view.dart';
-import 'package:flutter/material.dart';
-
-import 'package:get/get.dart';
-
 import '../controllers/cart_controller.dart';
 
 class CartView extends GetView<CartController> {

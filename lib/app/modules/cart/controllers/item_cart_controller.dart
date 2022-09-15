@@ -1,5 +1,8 @@
-import 'package:flower_app/app/modules/cart/controllers/cart_controller.dart';
+// Package imports:
 import 'package:get/get.dart';
+
+// Project imports:
+import 'package:flower_app/app/modules/cart/controllers/cart_controller.dart';
 
 class ItemCartController extends GetxController {
   var qty = 0.obs;

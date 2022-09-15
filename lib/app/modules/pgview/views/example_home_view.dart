@@ -1,6 +1,11 @@
-import 'package:flower_app/app/data/atom/custom_appbar.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:get/get.dart';
+
+// Project imports:
+import 'package:flower_app/app/data/atom/custom_appbar.dart';
 
 class ExHomeView extends GetView<ExHomeViewController> {
   const ExHomeView({Key? key}) : super(key: key);

@@ -1,8 +1,11 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
+// Package imports:
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
+// Project imports:
 import '../controllers/main_controller.dart';
 
 class MainView extends GetView<MainController> {

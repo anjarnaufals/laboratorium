@@ -1,5 +1,8 @@
-import 'package:flower_app/app/data/atom/custom_appbar.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Project imports:
+import 'package:flower_app/app/data/atom/custom_appbar.dart';
 
 class ExProfileView extends StatelessWidget {
   const ExProfileView({Key? key}) : super(key: key);

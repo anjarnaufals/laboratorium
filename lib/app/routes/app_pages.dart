@@ -1,5 +1,9 @@
+// Package imports:
 import 'package:get/get.dart';
 
+// Project imports:
+import 'package:flower_app/app/modules/AutoRefresh/bindings/auto_refresh_binding.dart';
+import 'package:flower_app/app/modules/AutoRefresh/views/auto_refresh_view.dart';
 import 'package:flower_app/app/modules/all/bindings/all_binding.dart';
 import 'package:flower_app/app/modules/all/views/all_view.dart';
 import 'package:flower_app/app/modules/bubble/bindings/bubble_binding.dart';
@@ -94,6 +98,11 @@ class AppPages {
       page: () => CartView(),
       binding: CartBinding(),
       transition: Transition.rightToLeft,
+    ),
+    GetPage(
+      name: _Paths.AUTO_REFRESH,
+      page: () => AutoRefreshView(),
+      binding: AutoRefreshBinding(),
     ),
   ];
 }
