@@ -17,6 +17,7 @@ abstract class Routes {
   static const CART = _Paths.CART;
   static const AUTO_REFRESH = _Paths.AUTO_REFRESH;
   static const AUTO_REFRESH_LVL2 = _Paths.AUTO_REFRESH_LVL2;
+  static const AUTO_REFRESH_LVL3 = _Paths.AUTO_REFRESH_LVL3;
 }
 
 abstract class _Paths {
@@ -33,4 +34,5 @@ abstract class _Paths {
   static const CART = '/cart';
   static const AUTO_REFRESH = '/auto-refresh';
   static const AUTO_REFRESH_LVL2 = '/auto-refresh-lvl2';
+  static const AUTO_REFRESH_LVL3 = '/auto-refresh-lvl3';
 }

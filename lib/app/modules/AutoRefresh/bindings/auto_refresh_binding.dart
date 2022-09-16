@@ -1,4 +1,5 @@
 // Package imports:
+import 'package:flower_app/app/modules/AutoRefresh/views/auto_refresh_view_lvl2.dart';
 import 'package:get/get.dart';
 
 // Project imports:
@@ -9,6 +10,9 @@ class AutoRefreshBinding extends Bindings {
   void dependencies() {
     Get.lazyPut<AutoRefreshController>(
       () => AutoRefreshController(),
+    );
+    Get.lazyPut<AutoRefreshControllerLvl2>(
+      () => AutoRefreshControllerLvl2(),
     );
   }
 }

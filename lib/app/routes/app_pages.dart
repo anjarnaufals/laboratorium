@@ -1,5 +1,6 @@
 // Package imports:
 import 'package:flower_app/app/modules/AutoRefresh/views/auto_refresh_view_lvl2.dart';
+import 'package:flower_app/app/modules/AutoRefresh/views/auto_refresh_view_lvl3.dart';
 import 'package:get/get.dart';
 
 // Project imports:
@@ -110,6 +111,12 @@ class AppPages {
       name: _Paths.AUTO_REFRESH_LVL2,
       page: () => AutoRefreshLvl2(),
       binding: AutoRefreshBinding(),
+      transition: Transition.rightToLeft,
+    ),
+    GetPage(
+      name: _Paths.AUTO_REFRESH_LVL3,
+      page: () => AutoRefreshLvl3(),
+      // binding: AutoRefreshBinding(),
       transition: Transition.rightToLeft,
     ),
   ];

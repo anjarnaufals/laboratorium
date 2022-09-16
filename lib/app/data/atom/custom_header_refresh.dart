@@ -16,7 +16,7 @@ class CustomHeaderRefresh extends StatelessWidget {
             height: 20,
             width: 20,
             child: mode == RefreshStatus.refreshing
-                ? LoadingIndicator()
+                ? const LoadingIndicator()
                 : const SizedBox(),
           ),
         );

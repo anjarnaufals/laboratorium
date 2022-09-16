@@ -1,13 +1,15 @@
 // Package imports:
-import 'package:flower_app/app/routes/app_pages.dart';
 import 'package:get/get.dart';
+import 'package:flower_app/app/routes/app_pages.dart';
 import 'package:pull_to_refresh_flutter3/pull_to_refresh_flutter3.dart';
 
 class AutoRefreshController extends GetxController {
   late RefreshController refreshController;
 
   var backToRefresh = false.obs;
+  var backToRefresh2 = false.obs;
   var backLoad = false.obs;
+  var backLoadLvl3 = false.obs;
 
   @override
   void onInit() {
@@ -44,9 +46,24 @@ class AutoRefreshController extends GetxController {
     }
   }
 
+  Future<void> onBackRefreshLvl2() async {
+    if (backLoadLvl3.isTrue) {
+      refreshController.requestRefresh();
+      await Future.delayed(Duration(milliseconds: 1500));
+      refreshController.refreshCompleted();
+      backToRefresh2(true);
+      backLoadLvl3(false);
+    }
+  }
+
   Future<void> goToNextPage() async {
     backLoad.value = await Get.toNamed(Routes.AUTO_REFRESH_LVL2);
     onBackRefresh();
+  }
+
+  Future<void> goToNextPageLvl3() async {
+    backLoadLvl3.value = await Get.toNamed(Routes.AUTO_REFRESH_LVL2);
+    onBackRefreshLvl2();
   }
 }
 

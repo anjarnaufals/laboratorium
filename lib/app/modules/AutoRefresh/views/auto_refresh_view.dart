@@ -30,35 +30,62 @@ class AutoRefreshView extends GetView<AutoRefreshController> {
           slivers: [
             _PageDesc(),
             _Content(),
-            SliverPadding(
-              padding: const EdgeInsets.all(16),
-              sliver: SliverToBoxAdapter(
-                child: Container(
-                  padding: const EdgeInsets.all(12),
-                  decoration: BoxDecoration(
-                    color: Colors.red[400],
-                    border: Border.all(width: 0.5, color: Colors.black),
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                  child: Column(
+            _Content2(),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _Content2 extends GetWidget<AutoRefreshController> {
+  const _Content2({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final c = controller;
+    return SliverPadding(
+      padding: const EdgeInsets.all(16),
+      sliver: SliverToBoxAdapter(
+        child: Column(
+          children: [
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.red[300],
+                border: Border.all(width: 0.5, color: Colors.black),
+                borderRadius: BorderRadius.circular(5),
+              ),
+              child: Column(
+                children: [
+                  Text(ArPageString.text3),
+                  const SizedBox(height: 20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(ArPageString.text3),
-                      const SizedBox(height: 20),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.warning,
-                            color: Colors.white,
-                          ),
-                          //TODO : go to third page and trigger back to first page
-                          Text("On Development", style: textWhite()),
-                        ],
-                      )
+                      Icon(
+                        Icons.warning,
+                        color: Colors.white,
+                      ),
+                      Text("On Development", style: textWhite()),
                     ],
                   ),
-                ),
+                ],
               ),
+            ),
+            const SizedBox(height: 20),
+            Obx(() => c.backLoadLvl3.isFalse
+                ? Text("backToRefresh2 = ${c.backToRefresh2.value}")
+                : LoadingIndicator()),
+            const SizedBox(height: 20),
+            CustomButton(
+              ontap: () {
+                c.goToNextPageLvl3();
+              },
+              text: "Go To Next Page 2",
+              bgColor: Colors.red,
             ),
           ],
         ),
@@ -88,10 +115,12 @@ class _Content extends GetWidget<AutoRefreshController> {
                 : LoadingIndicator()),
             const SizedBox(height: 20),
             CustomButton(
-                ontap: () {
-                  c.goToNextPage();
-                },
-                text: "Go To Next Page")
+              ontap: () {
+                c.goToNextPage();
+              },
+              text: "Go To Next Page",
+              bgColor: Colors.cyan,
+            )
           ],
         ),
       ),
