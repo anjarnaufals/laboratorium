@@ -25,21 +25,19 @@ class AutoRefreshController extends GetxController {
   @override
   void onClose() {}
 
-  Future<void> initialRefresh() async {
+  void initialRefresh() {
     refreshController = RefreshController(initialRefresh: true);
-    await Future.delayed(Duration(milliseconds: 1500));
-    refreshController.refreshCompleted();
   }
 
   Future<void> onRefresh() async {
-    await Future.delayed(Duration(milliseconds: 600));
+    await Future.delayed(Duration(milliseconds: 1200));
     refreshController.refreshCompleted();
   }
 
   Future<void> onBackRefresh() async {
     if (backLoad.isTrue) {
       refreshController.requestRefresh();
-      await Future.delayed(Duration(milliseconds: 1500));
+      await Future.delayed(Duration(milliseconds: 1200));
       refreshController.refreshCompleted();
       backToRefresh(true);
       backLoad(false);
@@ -49,7 +47,7 @@ class AutoRefreshController extends GetxController {
   Future<void> onBackRefreshLvl2() async {
     if (backLoadLvl3.isTrue) {
       refreshController.requestRefresh();
-      await Future.delayed(Duration(milliseconds: 1500));
+      await Future.delayed(Duration(milliseconds: 1200));
       refreshController.refreshCompleted();
       backToRefresh2(true);
       backLoadLvl3(false);
